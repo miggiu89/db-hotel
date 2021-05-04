@@ -51,3 +51,17 @@ WHERE ospite_id IS NOT NULL
 
 SELECT SUM(stanze.beds) AS 'totale_posti_letto'
 FROM `stanze`
+
+10)Conta gli ospiti raggruppandoli per anno di nascita
+
+SELECT COUNT(ospiti.id) AS 'ospiti', YEAR(date_of_birth) AS 'anno_nascita'
+FROM ospiti
+GROUP BY YEAR(date_of_birth)
+
+11)Somma i prezzi dei pagamenti raggruppandoli per status
+
+SELECT SUM(pagamenti.price) AS 'totale_pagamenti', pagamenti.status
+FROM pagamenti
+GROUP BY status
+
+12)Conta quante volte è stata prenotata ogni stanza
