@@ -75,3 +75,7 @@ GROUP BY stanza_id
 14)Quante prenotazioni ha fatto l’ospite che ha fatto più prenotazioni?
 
 15)Stampare tutti gli ospiti per ogni prenotazione
+SELECT `ospiti` .`name`, prenotazioni_has_ospiti . prenotazione_id
+FROM prenotazioni_has_ospiti
+INNER JOIN ospiti 
+ON prenotazioni_has_ospiti . ospite_id = ospiti . id
